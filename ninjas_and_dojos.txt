@@ -1,0 +1,74 @@
+SHOW * from dojos;
+
+INSERT INTO dojos (id, name, created_at, updated_at)
+VALUES ('1', 'Hickhock', NOW(), NOW());
+
+INSERT INTO dojos (id, name, created_at, updated_at)
+VALUES ('2', 'Hingarde', NOW(), NOW());
+
+INSERT INTO dojos (id, name, created_at, updated_at)
+VALUES ('3', 'Marineary', NOW(), NOW());
+
+DELETE * FROM dojos
+WHERE id<=3;
+
+INSERT INTO dojos (id, name, created_at, updated_at)
+VALUES ('1', 'Capped', NOW(), NOW());
+
+INSERT INTO dojos (id, name, created_at, updated_at)
+VALUES ('2', "Lordes'", NOW(), NOW());
+
+INSERT INTO dojos (id, name, created_at, updated_at)
+VALUES ('3', 'Zeuslabs', NOW(), NOW());
+
+```
+this is for creating ninajs that all belong to the FIRST instance of dojo.
+```
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('1', 'Hose', 'Varges', '28', NOW() NOW(), 1);
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('2', 'Jose', 'Neguro', '28', NOW() NOW(), 1);
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('3', 'Millak', 'Vivichuck', '19', NOW() NOW(), 1);
+
+```
+this is for creating ninajs that all belong to the SECOND instance of dojo.
+```
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('1', 'Reed', 'Kallihan', '20', NOW() NOW(), 2);
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('2', 'Shephard', 'Smith', '24', NOW() NOW(), 2);
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('3', 'Bobby', 'Kallback', '30', NOW() NOW(), 2);
+
+```
+this is for creating ninajs that all belong to the THIRD instance of dojo.
+```
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('1', 'Montenegro', 'Chalhoon', '23', NOW() NOW(), 3);
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('2', 'Michael', 'Water', '25', NOW() NOW(), 3);
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('3', 'Mike', 'Bottom', '27', NOW() NOW(), 3);
+
+SELECT * FROM ninjas
+WHERE dojos.id=1;
+
+SELECT * FROM ninjas
+WHERE dojos.id=3;
+
+```
+retrieve the last instance of ninja's dojo
+```
+
+SELECT dojos.name FROM dojos
+WHERE ninjas.dojo_id=dojos.id;
